@@ -33,7 +33,6 @@
   
 <script>
 
-import axios from 'axios';
 import Modal from '../components/DetailsModal.vue'
 import pinIcon from '../assets/icon-pin.svg';
 import { sampleData } from '../assets/sample-data';
@@ -84,26 +83,6 @@ export default {
             if (!this.$el.contains(event.target)) {
                 this.isOpen = false;
             }
-        },
-        getAddressFrom(lat, lon) {
-            axios.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="
-                + lat +
-                ","
-                + lon
-                + "&key=AIzaSyATLqfqG-AiTgWPFlPjDFRRL5vRIRFbZnk")
-                .then(response => {
-                    if (response.data.error_message) {
-                        this.error = response.data.error_message;
-                        // console.log(response.data.error_message);
-                    } else {
-                        this.address = response.data.results[0].formatted_address
-                        // console.log(response.data.results[0].formatted_address);
-                    }
-                })
-                .catch(error => {
-                    this.error = error.message;
-                    // console.log(error.message);
-                })
         },
         showLocationOnMap(lat, lon, init) {
             let map = new google.maps.Map(document.getElementById("map"), {

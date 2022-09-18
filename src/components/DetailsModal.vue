@@ -6,20 +6,21 @@
                     <form class="data">
                         <img class="icon" src="../assets/icon-pin.svg" />
                         <div>
-                            <div class="name">{{ data.name }}</div>
-                            <div class="location">{{ data.location.lat }}, {{ data.location.lon }}</div>
+                            <div v-if="data.name" class="name">{{ data.name }}</div>
+                            <div v-if="data.location" class="location">{{ data.location.lat }}, {{ data.location.lon }}</div>
                         </div>
                     </form>
-
                 </slot>
-                <button class="web-btn" type="button" @click="openWebsite(data.details.website)">Visit
-                    Website</button>
+                
+                <button v-if="data.details && data.details.website" class="web-btn" type="button" @click="openWebsite(data.details.website)">
+                    Visit Website
+                </button>
             </header>
 
-            <section class="modal-body">
+            <section  class="modal-body">
                 <slot name="body">
-                    <div class="data">{{ data.details.description }}</div>
-                    <div class="container" style="list-style: none;">
+                    <div v-if="data.details && data.details.description" class="data">{{ data.details.description }}</div>
+                    <div v-if="data.images" class="container" style="list-style: none;">
                         <li class="column" v-for="img in data.images">
                             <img class="images" :src=img />
                         </li>
@@ -37,7 +38,7 @@ export default {
     name: 'Modal',
 
     mounted() {
-        
+
     },
 
     methods: {
@@ -55,5 +56,5 @@ export default {
 </script>
 
 <style>
-    @import '../assets/styles/DetailsModal.css';
+@import '../assets/styles/DetailsModal.css';
 </style>
