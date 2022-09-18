@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="font-family: Arial, Helvetica, sans-serif;">
         <section class="ui three column left grid" style="position:relative;z-index:1">
             <div class="column">
                 <div class="ui message red" v-show="error">{{error}}</div>
@@ -7,21 +7,19 @@
                     <div class="input-icons">
                         <img class="icon" src="../assets/icon-search.svg">
                         <input class="input" type="text" placeholder="Search..." v-model="location" @input="onChange" />
-                        <ul v-show="isOpen" class="autocomplete-results">
+                        <header class="total-results" v-show="isOpen">Results found: {{ totalResults }}</header>
+                        <form v-show="isOpen" class="autocomplete-results">
                             <li v-for="(result, i) in results" :key="i" @click="setResult(result)">
-                                <form>
-                                    <img class="icon" src="../assets/icon-pin.svg">
-                                    <div class="autocomplete-result">
-                                        <div>{{ result.name }}</div>
-                                        <div class="autocomplete-location">
-                                            {{ result.location.lat }},
-                                            {{result.location.lon}}
-                                        </div>
+                                <img class="icon-pin" src="../assets/icon-pin.svg" style="fill: dodgerblue;" />
+                                <div class="autocomplete-result">
+                                    <div>{{ result.name }}</div>
+                                    <div class="autocomplete-location">
+                                        {{ result.location.lat }},
+                                        {{result.location.lon}}
                                     </div>
-
-                                </form>
+                                </div>
                             </li>
-                        </ul>
+                        </form>
                         <Modal v-show="isModalVisible" @close="closeModal" :data=details />
                     </div>
                 </form>
@@ -126,7 +124,6 @@ export default {
                     icon: pinIcon
                 });
                 marker.addListener("click", () => {
-                    console.log(this.details);
                     this.isModalVisible = true;
                 });
             }
@@ -145,5 +142,5 @@ export default {
 </script>
   
 <style scoped>
-    @import '../assets/styles/Map.css';
+@import '../assets/styles/Map.css';
 </style>

@@ -25,43 +25,55 @@
 
 .icon {
 	padding-top: 10px;
-	padding-left: 5px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	min-width: 10px;
+}
+
+.icon-pin {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
 	min-width: 20px;
 }
 
+.total-results {
+	background-color: #4AAE9B;
+	padding: 15px;
+	color: white;
+	font-weight: bold;
+}
+
+li {
+	list-style: none;
+	/* list-style-image: url('../icon-pin.svg'); */
+}
+
 .autocomplete-results {
-	border: 2px solid white;
-	box-shadow: 0px 5px 5px #0d0d0d49;
 	background-color: white;
 	position: relative;
-	padding: 5px;
-	margin: 0;
-	height: 120px;
 	min-height: 1em;
-	max-height: 6em;
+	max-height: 8em;
 	overflow: auto;
-	width: inherit;
 }
 
 .autocomplete-result {
-	list-style: none;
-	text-align: left;
-	padding: 4px 2px;
 	padding-left: 35px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	cursor: pointer;
 }
 
 .autocomplete-location {
 	font-size: 10px;
-	color: rgb(198, 198, 198);
-	list-style: none;
+	color: rgb(134, 133, 133);
 	text-align: left;
 	padding: 4px 2px;
 	cursor: pointer;
 }
 
 .autocomplete-result:hover {
-	background-color: #4AAE9B;
+	background-color: #4aae9c7d;
 	color: white;
 }
 

@@ -6,7 +6,7 @@
 
 .location {
     font-size: 10px;
-    color: rgb(198, 198, 198);
+    color: rgb(134, 133, 133);
     padding-left: 15px;
 }
 
@@ -84,17 +84,4 @@
 .modal-body {
     position: relative;
     padding: 5px 5px;
-}
-
-.btn-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: none;
-    font-size: 20px;
-    padding: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ff0000;
-    background: transparent;
 }
