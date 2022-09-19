@@ -46,5 +46,5 @@
 - I changed the map zoom and the size of the icon-pin svg to be more visible on the map.
 
 ## Future improvements
-- [] Create a separate component for the search bar
-- [] Outside click handler
+- [ ] Create a separate component for the search bar
+- [ ] Outside click handler
