@@ -37,14 +37,11 @@
 export default {
     name: 'Modal',
 
-    mounted() {
-
-    },
-
     methods: {
         close() {
             this.$emit('close');
         },
+        // Opens website of location in a new window
         openWebsite(website) {
             window.open(website);
         },

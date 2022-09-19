@@ -64,26 +64,24 @@ export default {
     },
 
     methods: {
-        // TODO: get method that will retrive lat, lon from sample-data
+        // Filter results by name
         filterData() {
             this.results = this.data.filter(item => item.name.toLowerCase().indexOf(this.location.toLowerCase()) > -1);
         },
+        // Watch for changes in the input text field
         onChange() {
             this.filterData();
-            this.totalResults = this.results.length
-            this.isOpen = true;
+            this.totalResults = this.results.length // Number of matching results
+            this.isOpen = true; // Open options/autocomplete list
         },
+        // Set result when matching result is selected
         setResult(result) {
             this.location = result.name;
             this.isOpen = false;
             this.showLocationOnMap(result.location.lat, result.location.lon, false);
-            this.details = result;
+            this.details = result; // details object is set to the selected result object
         },
-        handleClickOutside(event) {
-            if (!this.$el.contains(event.target)) {
-                this.isOpen = false;
-            }
-        },
+        // Show the location of on Google map
         showLocationOnMap(lat, lon, init) {
             let map = new google.maps.Map(document.getElementById("map"), {
                 center: {
@@ -96,6 +94,7 @@ export default {
                 disableDefaultUI: true,
             });
 
+            // If this is initial call, do not set a marker on initial location
             if (!init) {
                 let marker = new google.maps.Marker({
                     position: new google.maps.LatLng(lat, lon),
@@ -106,6 +105,7 @@ export default {
                     this.isModalVisible = true;
                 });
             }
+            // close autocomplete list when user clicks outside of text field (the map)
             map.addListener("click", () => {
                 this.isOpen = false;
             });
