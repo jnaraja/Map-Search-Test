@@ -19,7 +19,7 @@
 
             <section  class="modal-body">
                 <slot name="body">
-                    <div v-if="data.details && data.details.description" class="data">{{ data.details.description }}</div>
+                    <div v-if="data.details && data.details.description" class="data description">{{ data.details.description }}</div>
                     <div v-if="data.images" class="container" style="list-style: none;">
                         <li class="column" v-for="img in data.images">
                             <img class="images" :src=img />

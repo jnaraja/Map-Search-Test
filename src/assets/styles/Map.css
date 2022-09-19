@@ -3,9 +3,12 @@
 	box-shadow: 0px 5px 5px #0d0d0d49;
 	width: 100%;
 	padding: 10px;
-	padding-left: 35px;
+	padding-left: 0px;
 	text-align: left;
 	margin-bottom: 3px;
+	background: url('../icon-search.svg') no-repeat scroll 10px 10px;
+	background-color: white;
+	padding-left: 30px;
 }
 
 .inline {
@@ -51,6 +54,7 @@ li {
 
 .autocomplete-results {
 	background-color: white;
+	
 	position: relative;
 	min-height: 1em;
 	max-height: 8em;
@@ -58,9 +62,10 @@ li {
 }
 
 .autocomplete-result {
-	padding-left: 35px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	background: url('../icon-pin.svg') no-repeat scroll 7px 7px;
+	padding-left: 40px;
+	padding-top: 7px;
+	padding-bottom: 7px;
 	cursor: pointer;
 }
 

@@ -43,3 +43,4 @@
 
 ## Being Unique
 - One of the first questions I thought of was do I need to use the code given exactly how it is. When I read the directions, I saw at the end that I could be unique. Therefore, I used some of the files as references to implement my own instances.
+- I changed the map zoom and the size of the icon-pin svg to be more visible on the map.

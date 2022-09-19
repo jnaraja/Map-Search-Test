@@ -1,16 +1,14 @@
 <template>
     <div style="font-family: Arial, Helvetica, sans-serif;">
-        <section class="ui three column left grid" style="position:relative;z-index:1">
-            <div class="column">
-                <div class="ui message red" v-show="error">{{error}}</div>
-                <form class="inline">
-                    <div class="input-icons">
-                        <img class="icon" src="../assets/icon-search.svg">
-                        <input class="input" type="text" placeholder="Search..." v-model="location" @input="onChange" />
+        <div class="column" style="position:relative;z-index:1">
+            <div class="ui message red" v-show="error">{{error}}</div>
+            <form class="inline">
+                <div class="input-icons">
+                    <input class="input" type="text" placeholder="Search..." v-model="location" @input="onChange" />
+                    <div style="padding-top: 30px;">
                         <header class="total-results" v-show="isOpen">Results found: {{ totalResults }}</header>
                         <form v-show="isOpen" class="autocomplete-results">
                             <li v-for="(result, i) in results" :key="i" @click="setResult(result)">
-                                <img class="icon-pin" src="../assets/icon-pin.svg" style="fill: dodgerblue;" />
                                 <div class="autocomplete-result">
                                     <div>{{ result.name }}</div>
                                     <div class="autocomplete-location">
@@ -20,14 +18,12 @@
                                 </div>
                             </li>
                         </form>
-                        <Modal v-show="isModalVisible" @close="closeModal" :data=details />
                     </div>
-                </form>
-            </div>
-
-        </section>
-        <section id="map"></section>
-
+                    <Modal v-show="isModalVisible" @close="closeModal" :data=details />
+                </div>
+            </form>
+        </div>
+        <section id="map" style="float: left;"></section>
     </div>
 </template>
   
@@ -36,7 +32,6 @@
 import Modal from '../components/DetailsModal.vue'
 import pinIcon from '../assets/icon-pin.svg';
 import { sampleData } from '../assets/sample-data';
-
 
 
 export default {
