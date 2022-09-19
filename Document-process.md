@@ -3,7 +3,7 @@
 - Because I could potentially be a member of the Ground Signal team, I thought it would be a good idea to use Vue.js. So far my experience with it has been great! This is my first time working with this front end framework and I really enjoyed learning and getting familiar with it.
 
 ## Creating an API key
-- First I noticed the given code had an API key and thought that would be suffice. After testing to see if the key was still active, I decided to create my own API key through google cloud 
+- First I noticed the given code had an API key and thought that would be suffice. After testing it, I decided to create my own API key through google cloud 
 - I Restricted the key using the Maps Javascript API
 
 ## Add API key

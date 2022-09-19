@@ -10,11 +10,8 @@
                         <form v-show="isOpen" class="autocomplete-results">
                             <li v-for="(result, i) in results" :key="i" @click="setResult(result)">
                                 <div class="autocomplete-result">
-                                    <div>{{ result.name }}</div>
-                                    <div class="autocomplete-location">
-                                        {{ result.location.lat }},
-                                        {{result.location.lon}}
-                                    </div>
+                                    <div v-text="result.name"></div>
+                                    <div v-text="result.location.lat + ', ' + result.location.lon" class="autocomplete-location"></div>
                                 </div>
                             </li>
                         </form>
@@ -51,7 +48,7 @@ export default {
     },
 
     mounted() {
-        this.showLocationOnMap(-34.397, 150.644, true)
+        this.showLocationOnMap(-34.397, 150.644, true) // true is a parameter that represents initial startup
     },
 
     components: {
