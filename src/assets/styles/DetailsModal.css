@@ -53,6 +53,7 @@
 
 .images {
     width: 153px;
+    border-radius: 5px;
 }
 
 .modal-backdrop {
@@ -69,6 +70,7 @@
 
 .modal {
     background: #FFFFFF;
+    border-radius: 5px;
     box-shadow: 1px 5px 5px #0d0d0d49;
     overflow-x: auto;
     display: flex;

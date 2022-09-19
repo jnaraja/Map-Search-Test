@@ -3,7 +3,7 @@
         <div class="column" style="position:relative;z-index:1">
             <div class="ui message red" v-show="error">{{error}}</div>
             <form class="inline">
-                <div class="input-icons">
+                <div>
                     <input class="input" type="text" placeholder="Search..." v-model="location" @input="onChange" />
                     <div style="padding-top: 30px;">
                         <header class="total-results" v-show="isOpen">Results found: {{ totalResults }}</header>

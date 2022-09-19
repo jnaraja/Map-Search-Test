@@ -7,22 +7,25 @@
                         <img class="icon" src="../assets/icon-pin.svg" />
                         <div>
                             <div v-if="data.name" v-text="data.name" class="name"></div>
-                            <div v-if="data.location" v-text="data.location.lat + ', ' + data.location.lon" class="location"></div>
+                            <div v-if="data.location" v-text="data.location.lat + ', ' + data.location.lon"
+                                class="location"></div>
                         </div>
                     </form>
                 </slot>
-                
-                <button v-if="data.details && data.details.website" class="web-btn" type="button" @click="openWebsite(data.details.website)">
+
+                <button v-if="data.details && data.details.website" class="web-btn" type="button"
+                    @click="openWebsite(data.details.website)">
                     Visit Website
                 </button>
             </header>
 
-            <section  class="modal-body">
+            <section class="modal-body">
                 <slot name="body">
-                    <div v-if="data.details && data.details.description" v-text="data.details.description" class="data description"></div>
+                    <div v-if="data.details && data.details.description" v-text="data.details.description"
+                        class="data description"></div>
                     <div v-if="data.images" class="container" style="list-style: none;">
                         <li class="column" v-for="img in data.images">
-                            <img class="images" :src=img />
+                            <img class="images" :src=img @error="setAltImg"/>
                         </li>
                     </div>
                 </slot>
@@ -45,6 +48,10 @@ export default {
         openWebsite(website) {
             window.open(website);
         },
+        // Set image to nothing if failed to get
+        setAltImg(event) {
+            event.target.src = ""
+        }
     },
     props: {
         data: Object
