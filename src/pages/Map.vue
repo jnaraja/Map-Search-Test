@@ -20,7 +20,7 @@
                 </div>
             </form>
         </div>
-        <section id="map" style="float: left;"></section>
+        <section id="map"></section>
     </div>
 </template>
   
