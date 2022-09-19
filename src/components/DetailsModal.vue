@@ -24,8 +24,8 @@
                     <div v-if="data.details && data.details.description" v-text="data.details.description"
                         class="data description"></div>
                     <div v-if="data.images" class="container" style="list-style: none;">
-                        <li class="column" v-for="img in data.images">
-                            <img class="images" :src=img @error="setAltImg"/>
+                        <li class="column img" v-for="img in data.images">
+                            <img class="images" @error="setAltImg" :src=img />
                         </li>
                     </div>
                 </slot>
@@ -36,6 +36,7 @@
 
 <script>
 
+import notFound from '../assets/not-found.png';
 
 export default {
     name: 'Modal',
@@ -50,7 +51,7 @@ export default {
         },
         // Set image to nothing if failed to get
         setAltImg(event) {
-            event.target.src = ""
+            event.target.src = notFound
         }
     },
     props: {

@@ -26,7 +26,7 @@
   
 <script>
 
-import Modal from '../components/DetailsModal.vue'
+import Modal from '../components/DetailsModal.vue';
 import pinIcon from '../assets/icon-pin.svg';
 import { sampleData } from '../assets/sample-data';
 
