@@ -41,10 +41,6 @@
 ## Implementing icon-pin.svg
 - Initially, I replaced the list-style from discs to the icon-pin.svg (for the autocomplete list). Because of a sizing issue and for the sake of having something that works for now, I set the list-style to `none`. Then I inserted the svg as an img on the left hand side of the autocomplete options in the list.
 
-## Being Unique
-- One of the first questions I thought of was do I need to use the code given exactly how it is. When I read the directions, I saw at the end that I could be unique. Therefore, I used some of the files as references to implement my own instances.
-- I changed the map zoom and the size of the icon-pin svg to be more visible on the map.
-
 ## Future improvements
 - [ ] Create a separate component for the search bar
 - [ ] Outside click handler
